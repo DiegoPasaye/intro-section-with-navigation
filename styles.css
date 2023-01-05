@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+html{
+    font-family: 'Epílogo', sans-serif;
+    background: hsl(0, 0%, 98%);
+}
+.menuMobile{
+    display: none;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    z-index: 20;
+    color: hsl(0, 0%, 41%);
+}
+nav p{
+    cursor: pointer;
+}
+.nav:hover{
+    animation-name: color;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+.left{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: space-around;
+}
+.arrow{
+    display: flex;
+    align-items: center;
+}
+.left img{
+    padding: 5%;
+}
+.right{
+    display: flex;
+    align-items: center;
+    width: 30%;
+    justify-content: space-evenly;
+}
+.register{
+    border: 1px solid hsl(0, 0%, 41%);
+    padding: 10px;
+    border-radius: 10px;
+}
+.menu{
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+}
+.menuFeatures{
+    margin-left: -10%;
+    border-radius: 10px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    visibility: hidden;
+    box-shadow: 0px 0px 40px 0px hsl(0, 6%, 75%);
+}
+.menuFeatures p{
+    margin-left: 15px;
+}
+.menuFeatures img{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.menuCompany{
+    width:15%;
+    margin-left: 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    visibility: hidden;
+    box-shadow: 0px 0px 20px 0px hsl(0, 6%, 75%);
+}
+.menuCompany p{
+    margin: 5%;
+    margin-left: 20px;
+}
+
+.down{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    z-index: 0;
+}
+h1{
+    font-size: 60px;
+    font-weight: 700;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 0;
+}
+p{
+    font-weight: 500;
+}
+.down-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.down-left p{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    line-height: 20px;
+    color: hsl(0, 0%, 41%);
+}
+button{
+    height: 5%;
+    width: 30%;
+    margin-left: 10%;
+    margin-top: 5%;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    color: white;
+    background: black;
+}
+button:hover{
+    animation-name: boton;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.down-right{
+    display: flex;
+    width: 80%;
+    background-image: url("images/image-hero-desktop.png");
+    height: 90vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.logos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20%;
+}
+.mostrar{
+    animation-name: opacidad;
+    animation-duration: 1.5s;
+}
+.menu{
+    visibility: hidden;
+}
+
+@keyframes color{
+    0%{
+        color: gray;
+    }
+    100%{
+        color: black;
+    }
+}
+@keyframes boton{
+    100%{
+        background: transparent;
+        color: black;
+        border: 1px solid black;
+    }
+}
+@keyframes opacidad {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (max-width: 750px){
+    .right{
+        content: url(images/icon-menu.svg);
+        width: 10%;
+        height: 10%;
+        padding-top: 3%;
+        padding-right: 3%;
+    }
+    .left{
+        content: url(images/logo.svg);
+        width: 20%;
+        height: 20%;
+        padding-top: 3%;
+        padding-left: 3%;
+    }
+    .closeImg{
+        content: url(images/icon-close-menu.svg);
+        width: 13%;
+        margin-left: 73%;
+    }
+    .menuMobile{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 60%;
+        margin-left: 30%;
+        height: 100vh;
+        background: white;
+        visibility: hidden;
+        gap: 3%;
+        padding-top: 5%;
+        padding-left: 10%;
+    }
+    .menuMobile p{
+        margin-top: 5%;
+        color: gray;
+    }
+    .menuFeatures{
+        margin-left: 5%;
+        width: 60%;
+    }
+    .login{
+        margin-left: 30%;
+    }
+    .register{
+        margin: 0;
+        width: 80%;
+        text-align: center;
+    }
+    .menuCompany{
+        margin-left: 5%;
+        width: 60%;
+        background: white;
+    }
+    .sesion{
+        margin-top: 20%;
+    }
+    .down{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .down-right{
+        width: 100%;
+        height: 40vh;
+        background-size: contain;
+        background-position: center;
+        background-image: url(images/image-hero-mobile.png);
+        margin-top: 5%;
+    }
+    h1{
+        font-size: 40px;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10%;
+        align-items: center;
+        align-content: center;
+    }
+    .down-left{
+        align-items: center;
+    }
+    .down-left p{
+        width: 90%;
+        margin-left: 5%;
+        align-items: center;
+    }
+    button{
+        height: 6vh;
+        margin: 0;
+        margin-top: 5%;
+    }
+    .logos{
+        margin-top: 10%;
+    }
+}
+@media (max-width: 500px){
+    .login{
+        margin-left: 25%;
+    }
+}
